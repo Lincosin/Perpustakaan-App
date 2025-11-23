@@ -41,33 +41,28 @@
 
   - App/
 
-<!-- -->
+    - config.php
+  
+    - index.php
+  
+    - tambah.php
+  
+    - edit.php
+  
+    - detail.php
+  
+    - buku.php
+  
+    - Validator.php
 
-- config.php
+  - src/
 
-- index.php
-
-- tambah.php
-
-- edit.php
-
-- detail.php
-
-- buku.php
-
-- Validator.php
-
-- src/
-
-  - style.css
-
-  - navbar.php
-
-  <!-- -->
+    - style.css
+  
+    - navbar.php
 
   - uploads/
 
-<!-- -->
 
 - Class Utama:
 
@@ -79,7 +74,6 @@
 
 # **Intruksi Menjalankan Aplikasi**
 
-<!-- -->
 
 1.  Jalankan Perintah CLI ini secara bertahap:
 
