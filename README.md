@@ -79,8 +79,6 @@
 
 # **Intruksi Menjalankan Aplikasi**
 
-6.  
-
 <!-- -->
 
 1.  Jalankan Perintah CLI ini secara bertahap:
