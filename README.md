@@ -41,27 +41,27 @@
 
   - App/
 
-    - config.php
+     - config.php
   
-    - index.php
+     - index.php
   
-    - tambah.php
+     - tambah.php
   
-    - edit.php
+     - edit.php
   
-    - detail.php
+     - detail.php
   
-    - buku.php
+     - buku.php
   
-    - Validator.php
+     - Validator.php
 
-  - src/
+     - src/
 
-    - style.css
+       - style.css
   
-    - navbar.php
+       - navbar.php
 
-  - uploads/
+     - uploads/
 
 
 - Class Utama:
