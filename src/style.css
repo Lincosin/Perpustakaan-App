@@ -1,0 +1,363 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Layout */
+body {
+    /* display: flex;
+    min-height: 100vh; */
+    background: #f4f6f9;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1B3C53;
+    padding: 32px 30px;
+    color: #fff;
+}
+
+.navbar .home {
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    font-size: 22px;
+    font-weight: normal;
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar .tbh {
+    background-color: #5E936C;
+    color: #fff;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.navbar .tbh:hover {
+    background-color: #3E5F44;
+    color: #fff;
+}
+
+/* main content */
+.main {
+    flex: 1;
+    padding: 20px;
+}
+.main h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Card */
+.table-card h2{
+    margin-bottom: 20px;
+    color: #333;
+}
+.form-card, .table-card {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Form */
+.form-card {
+    width: 80%;
+    max-width: none;
+    margin: 20px auto;
+    padding: 24px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+.form-card h2 {
+    margin-bottom: 16px;
+    color: #1f2937;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* Form layout */
+form {
+    display: block;
+}
+
+/* Labels */
+form label {
+    display: block;
+    margin: 12px 0 6px;
+    color: #374151;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* Inputs, select, file */
+form input[type="text"],
+form input[type="number"],
+form select,
+form input[type="file"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #111827;
+    background: #ffffff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    margin-bottom: 14px; /* replace the <br><br> spacing */
+}
+
+/* File input visual tweak */
+form input[type="file"] {
+    padding: 8px;
+}
+
+/* Focus states */
+form input:focus,
+form select:focus {
+    border-color: #27ae60;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.2);
+}
+
+/* Submit button */
+form button {
+    display: inline-block;
+    background: #27ae60;
+    color: #ffffff;
+    border: none;
+    width: 100%;
+    height: 60px;
+    padding: 12px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    transition: background 0.2s ease, transform 0.05s ease;
+}
+
+form button:hover {
+    background: #219150;
+}
+
+form button:active {
+    transform: translateY(1px);
+}
+
+.kembali{
+    display: inline-block;
+    margin: 25px 0 0 0;
+    background: #df2929;
+    color: #ffffff;
+    border: none;
+    width: 100%;
+    height: 60px;
+    padding: 20px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 15px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.2s ease, transform 0.05s ease;
+}
+
+.kembali:hover {
+    background: #ba1f1f;
+}
+
+.kembali:active {
+    transform: translateY(1px);
+}
+
+form br {
+    display: none;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+table th, table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+table th {
+    background: #234C6A;
+    color: #fff;
+}
+table tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+/* Buttons */
+.btn-edit {
+    background: #2980b9;
+    color: #fff;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+.btn-edit:hover {
+    background: #1f6391;
+}
+
+.btn-detail {
+    background: #53d125;
+    color: #fff;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+.btn-detail:hover {
+    background: #169442;
+}
+
+.btn-delete {
+    background: #c0392b;
+    color: #fff;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+.btn-delete:hover {
+    background: #962d22;
+}
+
+/* No data message */
+.no-data {
+    text-align: center;
+    color: #888;
+    font-style: italic;
+}
+
+.pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+}
+
+.pagination p {
+    margin: 0 10px 0 0;
+    font-size: 16px;
+    font-weight: medium;
+    color: #333;
+}
+
+/* Link pagination */
+.pagination a {
+    display: inline-block;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    color: #2563eb; /* biru */
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+/* Hover effect */
+.pagination a:hover {
+    background-color: #2563eb;
+    color: #fff;
+    border-color: #2563eb;
+}
+
+/* Active page */
+.pagination a.active {
+    background-color: #2563eb;
+    color: #fff;
+    border-color: #2563eb;
+    font-weight: bold;
+    cursor: default;
+}
+
+.pagination a.disabled {
+    color: #aaa;
+    border-color: #eee;
+    pointer-events: none;
+    background-color: #f9f9f9;
+}
+
+.sampul-wrapper {
+    display: flex;
+    flex-direction: column; /* susun vertikal */
+    align-items: flex-start; /* rata kiri */
+    margin-bottom: 15px;
+}
+
+.sampul-lama {
+    width: 80px;
+    margin-bottom: 8px; /* jarak antara gambar dan label */
+    border: 1px solid #ccc;
+    padding: 2px;
+}
+
+.ganti-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.detail-card {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #f9f9f9;
+}
+
+.detail-card h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.detail-item {
+    margin: 10px 0;
+}
+
+.detail-item span {
+    font-weight: bold;
+    display: inline-block;
+    width: 120px;
+}
+
+.detail-sampul {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.detail-sampul img {
+    max-width: 150px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 15px;
+    background: #db3434;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.back-link:hover {
+    background: #821717;
+}
