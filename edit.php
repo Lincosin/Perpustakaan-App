@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         if ($bukuObj->edit($_POST['id_buku'], $judul, $penulis, $tahunTerbit, $kategori, $status, $sampul)) {
             echo "<script>alert('Update Data berhasil disimpan!');
-                window.location.href = 'index.php';</script>";
+                window.location.href = 'index.php'; </script>";
         } else {
             echo "<script>alert('Update Data gagal disimpan!');</script>";
         }

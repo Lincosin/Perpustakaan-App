@@ -36,20 +36,33 @@ class Buku {
         $stmt->execute([$id_buku]);
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        $sampulPath = $row['sampul'];
+        $sampulPath = $row ? $row['sampul'] : null;
 
         if ($sampul && $sampul['error'] == UPLOAD_ERR_OK) {
-            $namaFileBaru = time() . "_" . basename($sampul['name']);
-            $targetPath   = __DIR__ . "/" . $namaFileBaru;
-            move_uploaded_file($sampul['tmp_name'], $targetPath);
-            $sampulPath = "/" . $namaFileBaru;
+            if (!empty($row['sampul'])) {
+                $oldFile = __DIR__ . "/uploads/" . $row['sampul'];
+                if (file_exists($oldFile)) {
+                    unlink($oldFile);
+                }
+            }
+
+            $targetPath = __DIR__ . "/" . $row['sampul'];
+            if (move_uploaded_file($sampul['tmp_name'], $targetPath)) {
+                $sampulPath = $row['sampul'];
+            }
         }
 
         $sql = "UPDATE buku 
                 SET judul=?, penulis=?, tahun_terbit=?, kategori=?, status=?, sampul=? 
                 WHERE id_buku=?";
         $stmt = $this->pdo->prepare($sql);
-        return $stmt->execute([$judul, $penulis, $tahun, $kategori, $status, $sampulPath, $id_buku]);
+        $success = $stmt->execute([$judul, $penulis, $tahun, $kategori, $status, $sampulPath, $id_buku]);
+
+        // if (!$success) {
+        //     var_dump($stmt->errorInfo()); // debug jika gagal
+        // }
+
+        return $success;
 
         } catch (Exception $e) {
             echo "Error: " . $e->getMessage();
